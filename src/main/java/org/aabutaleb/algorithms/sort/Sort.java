@@ -6,4 +6,12 @@ public interface Sort {
         data[dest] = data[orig];
         data[orig] = tmp;
     }
+
+    int[] getData();
+
+    void setData(int[] data);
+
+    void run();
+
+    void print();
 }

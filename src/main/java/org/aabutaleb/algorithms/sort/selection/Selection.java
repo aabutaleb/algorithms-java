@@ -40,7 +40,6 @@ public class Selection implements Sort {
         Arrays.stream(getData()).forEach(System.out::println);
     }
 
-
     public int[] getData() {
         return data;
     }
