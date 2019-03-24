@@ -1,5 +1,7 @@
 package org.aabutaleb.algorithms.sort;
 
+import java.util.Arrays;
+
 public interface Sort {
     default void exch(int[] data, int orig, int dest){
         var tmp = data[dest];
@@ -13,5 +15,7 @@ public interface Sort {
 
     void run();
 
-    void print();
+    default void print(){
+        Arrays.stream(getData()).forEach(System.out::println);
+    }
 }

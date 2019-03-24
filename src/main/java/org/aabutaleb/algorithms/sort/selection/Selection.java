@@ -3,8 +3,8 @@ package org.aabutaleb.algorithms.sort.selection;
 import org.aabutaleb.algorithms.sort.Sort;
 import org.aabutaleb.algorithms.util.DataLoader;
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.IOException;
+
 
 public class Selection implements Sort {
     private int[] data;
@@ -34,10 +34,6 @@ public class Selection implements Sort {
             }
             exch(data, i, min);
         }
-    }
-
-    public void print(){
-        Arrays.stream(getData()).forEach(System.out::println);
     }
 
     public int[] getData() {
