@@ -12,7 +12,7 @@ public class Selection implements Sort {
     private Selection(){}
 
     public static Selection build(){
-        Selection selection = new Selection();
+        var selection = new Selection();
 
         try {
             selection.setData(DataLoader.read("selection.data"));
@@ -26,6 +26,7 @@ public class Selection implements Sort {
     /**
      * Written in imperative java to keep similarity with the mathematical algorithm
      */
+    @Override
     public void run(){
         for (int i = 0; i < data.length; i++){
             var min = i;
@@ -36,10 +37,12 @@ public class Selection implements Sort {
         }
     }
 
+    @Override
     public int[] getData() {
         return data;
     }
 
+    @Override
     public void setData(int[] data) {
         this.data = data;
     }
