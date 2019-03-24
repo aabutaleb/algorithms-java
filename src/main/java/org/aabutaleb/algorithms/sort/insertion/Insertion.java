@@ -23,7 +23,11 @@ public class Insertion implements Sort {
 
     @Override
     public void run() {
-
+        for (int i = 0; i < data.length; i++){
+            for (int j = i; j > 0 && data[j] < data[j-1]; j--){
+                exch(data, j, j-1);
+            }
+        }
     }
 
     @Override

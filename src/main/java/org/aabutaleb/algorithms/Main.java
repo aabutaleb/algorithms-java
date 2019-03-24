@@ -1,12 +1,12 @@
 package org.aabutaleb.algorithms;
 
-import org.aabutaleb.algorithms.sort.selection.Selection;
+import org.aabutaleb.algorithms.sort.insertion.Insertion;
 
 public class Main {
     public static void main(String[] args) {
-        Selection selection = Selection.build();
+        Insertion insertion = Insertion.build();
 
-        selection.run();
-        selection.print();
+        insertion.run();
+        insertion.print();
     }
 }

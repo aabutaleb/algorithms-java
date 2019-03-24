@@ -22,6 +22,9 @@ public class DataLoader {
                 data.add(Integer.parseInt(line));
             }
         }
+        else{
+            System.err.println("Data not found");
+        }
 
         return data.stream().mapToInt(i -> i).toArray();
     }
