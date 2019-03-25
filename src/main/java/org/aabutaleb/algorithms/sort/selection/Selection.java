@@ -15,7 +15,7 @@ public class Selection implements Sort {
         var selection = new Selection();
 
         try {
-            selection.setData(DataLoader.read("selection.data"));
+            selection.setData(DataLoader.read("integers.data"));
         } catch (IOException e) {
             System.err.println("Couldn't load the data");
             e.printStackTrace();

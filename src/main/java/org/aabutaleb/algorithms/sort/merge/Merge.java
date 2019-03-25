@@ -1,32 +1,39 @@
-package org.aabutaleb.algorithms.sort.insertion;
+package org.aabutaleb.algorithms.sort.merge;
 
 import org.aabutaleb.algorithms.sort.Sort;
 import org.aabutaleb.algorithms.util.DataLoader;
 
 import java.io.IOException;
 
-public class Insertion implements Sort {
-    private int[] data;
-    private Insertion(){}
 
-    public static Insertion build(){
-        var insertion = new Insertion();
+public class Merge implements Sort {
+    private int[] data;
+
+    private Merge(){}
+
+    public static Merge build(){
+        var newobject = new Merge();
 
         try {
-            insertion.setData(DataLoader.read("integers.data"));
+            newobject.setData(DataLoader.read("integers.data"));
         } catch (IOException e) {
             System.err.println("Couldn't load the data");
             e.printStackTrace();
         }
-        return insertion;
+        return newobject;
     }
 
+    /**
+     * Written in imperative java to keep similarity with the mathematical algorithm
+     */
     @Override
-    public void run() {
+    public void run(){
         for (int i = 0; i < data.length; i++){
-            for (int j = i; j > 0 && data[j] < data[j-1]; j--){
-                exch(data, j, j-1);
+            var min = i;
+            for (int j = i+1; j < data.length; j++) {
+                if (data[j] < data[min]) min = j;
             }
+            exch(data, i, min);
         }
     }
 
