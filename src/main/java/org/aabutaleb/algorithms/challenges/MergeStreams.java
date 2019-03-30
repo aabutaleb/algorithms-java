@@ -1,4 +1,4 @@
-package org.aabutaleb.algorithms.merge;
+package org.aabutaleb.algorithms.challenges;
 
 import java.util.ArrayList;
 import java.util.Arrays;
