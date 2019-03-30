@@ -3,14 +3,32 @@ package org.aabutaleb.algorithms.merge;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class MergeStreams {
     public static void main(String[] args) {
-        var singleStream = mergeStreams(new int[][]{
+//        var singleStream = mergeStreams(new int[][]{
+//                new int[]{1,5,10,15}, new int[]{2,4,8,14}, new int[]{3,6,9,12,18}
+//        });
+
+//        singleStream.forEach(System.out::println);
+
+        var singleStream = mergeStreamsPQ(new int[][]{
                 new int[]{1,5,10,15}, new int[]{2,4,8,14}, new int[]{3,6,9,12,18}
         });
 
-        singleStream.forEach(System.out::println);
+        while(!singleStream.isEmpty()){
+            System.out.println(singleStream.remove());
+        }
+    }
+
+    public static PriorityQueue<Integer> mergeStreamsPQ(int[][] streams){
+        var pq = new PriorityQueue<Integer>();
+
+        Arrays.stream(streams).forEach(intstream ->
+                Arrays.stream(intstream).forEach(pq::add));
+
+        return pq;
     }
 
     public static List<Integer> mergeStreams(int[][] streams){
