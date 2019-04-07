@@ -1,14 +1,12 @@
 package org.aabutaleb.algorithms;
 
-import org.aabutaleb.algorithms.sort.merge.Merge;
-import org.aabutaleb.algorithms.util.ResultChecker;
+import org.aabutaleb.algorithms.search.binary.BinarySearch;
 
 public class Main {
     public static void main(String[] args) {
-        Merge algorithm = Merge.build();
-
-        algorithm.run();
-        algorithm.print();
-        ResultChecker.isOrdered(algorithm.getData());
+        BinarySearch b = BinarySearch.build();
+        b.setGoal(16122);
+        b.setDebugModeOn();
+        b.run();
     }
 }
