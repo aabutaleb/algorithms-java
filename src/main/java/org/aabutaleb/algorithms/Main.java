@@ -1,12 +1,10 @@
 package org.aabutaleb.algorithms;
 
-import org.aabutaleb.algorithms.search.binary.BinarySearch;
+import org.aabutaleb.algorithms.tree.data.BinaryTree;
 
 public class Main {
     public static void main(String[] args) {
-        BinarySearch b = BinarySearch.build();
-        b.setGoal(16122);
-        b.setDebugModeOn();
-        b.run();
+        BinaryTree tree = BinaryTree.build();
+        tree.print(BinaryTree.Traversal.INORDER);
     }
 }
