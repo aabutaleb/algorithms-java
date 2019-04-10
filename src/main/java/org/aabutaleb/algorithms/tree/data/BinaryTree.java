@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class BinaryTree {
     private Node root;
+
     public enum Traversal {
         PREORDER, INORDER, POSTORDER;
     }
@@ -16,7 +17,7 @@ public class BinaryTree {
     public static BinaryTree build() {
         var newobject = new BinaryTree();
         try {
-            newobject.loadData(DataLoader.read("integers.data"));
+            newobject.loadData(DataLoader.read("integers-tree.data"));
         } catch (IOException e) {
             System.err.println("Couldn't load the data");
             e.printStackTrace();
@@ -28,6 +29,19 @@ public class BinaryTree {
         Arrays.stream(arr).forEach(x -> {
             root = insert(root, x);
         });
+    }
+
+    public boolean isBST() {
+        return checkBST(root);
+    }
+
+    private boolean checkBST(Node root) {
+        if (root != null) {
+            return (checkBST(root.getLeft()) && checkBST(root.getRight()) &&
+                    (root.getLeft() == null || root.getLeft().getValue() < root.getValue()) &&
+                    (root.getRight() == null || root.getRight().getValue() > root.getValue()));
+        }
+        else return true;
     }
 
     private Node insert(Node root, int data) {

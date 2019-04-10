@@ -6,5 +6,8 @@ public class Main {
     public static void main(String[] args) {
         BinaryTree tree = BinaryTree.build();
         tree.print(BinaryTree.Traversal.INORDER);
+        System.out.println("Is BST: "+tree.isBST());
     }
 }
+
+
